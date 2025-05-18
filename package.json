@@ -1,0 +1,33 @@
+{
+  "name": "new-aws",
+  "version": "1.0.0",
+  "description": "🧩 Fullstack Demo: Node.js + React + Docker + AWS + CI/CD Projeto demonstrativo desenvolvido com o objetivo de consolidar conhecimentos avançados em desenvolvimento fullstack, com foco em práticas profissionais utilizadas por desenvolvedores seniores.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brabodopedro/new-aws.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brabodopedro/new-aws/issues"
+  },
+  "homepage": "https://github.com/Brabodopedro/new-aws#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.2",
+    "nodemon": "^3.1.10",
+    "semantic-release": "^24.2.4"
+  }
+}
