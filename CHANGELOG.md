@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Brabodopedro/new-aws/compare/v1.0.0...v1.1.0) (2025-05-19)
+
+
+### Features
+
+* adiciona rota /status para monitoramento ([5198f29](https://github.com/Brabodopedro/new-aws/commit/5198f2965b455c27312545b6a1c5a3d63641e318))
+
 # 1.0.0 (2025-05-19)
 
 
