@@ -31,4 +31,6 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Run semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
