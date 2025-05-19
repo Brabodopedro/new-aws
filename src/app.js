@@ -14,3 +14,6 @@ app.listen(PORT, () => {
   console.log(`Swagger em http://localhost:${PORT}/api-docs`);
 });
 
+app.get('/status', (req, res) => {
+  res.send('online');
+});
