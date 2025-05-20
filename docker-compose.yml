@@ -1,0 +1,9 @@
+services:
+  node-app:
+    image: brabodopedro/my-docker:meu-node-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "npm install && npm start"
