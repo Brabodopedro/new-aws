@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Brabodopedro/new-aws/compare/v1.1.0...v1.1.1) (2025-05-20)
+
+
+### Bug Fixes
+
+* criando docker-compose para rodar os codigo pela imagens sempre ([f117f6c](https://github.com/Brabodopedro/new-aws/commit/f117f6c394d6f04cce418bae896f646aa8b300cf))
+
 # [1.1.0](https://github.com/Brabodopedro/new-aws/compare/v1.0.0...v1.1.0) (2025-05-19)
 
 
