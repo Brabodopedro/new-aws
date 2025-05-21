@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Brabodopedro/new-aws/compare/v1.1.1...v1.1.2) (2025-05-21)
+
+
+### Bug Fixes
+
+* Adicionando o docker de Produçao  na brant main ([46307e2](https://github.com/Brabodopedro/new-aws/commit/46307e26f4dbfd3fa0fa20df9274db132894c85c))
+
 ## [1.1.1](https://github.com/Brabodopedro/new-aws/compare/v1.1.0...v1.1.1) (2025-05-20)
 
 
