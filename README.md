@@ -1,12 +1,21 @@
-🚀 Projeto Node.js API - Pipeline Docker + Versionamento
+🚀 Projeto Node.js API — Pipeline Docker + Versionamento + Deploy na AWS
 📦 Sobre
-Este projeto é uma API simples em Node.js (API de ping-pong) com:
+Este projeto é uma API simples em Node.js (API de ping-pong e documentação Swagger) com:
 
 🐳 Pipeline completo para geração de imagens Docker
 
 🏷️ Versionamento automático com Semantic Release
 
-🔁 Deploy automatizado via Docker Hub e AWS (em desenvolvimento)
+🔁 Deploy automatizado via Docker Hub
+
+☁️ Deploy bem-sucedido na AWS ECS Fargate
+
+🌍 Deploy na AWS
+✅ O projeto está rodando em ambiente de produção na AWS ECS Fargate, acessível publicamente:
+
+API Health Check → http://18.214.87.127:3000/ping
+
+Documentação Swagger → http://18.214.87.127:3000/api-docs
 
 🐙 Fluxo de Docker + Versionamento
 ✅ Organização das Branches
@@ -21,19 +30,19 @@ Push ou Pull Request na dev	Build da imagem → Push para Docker Hub como dev (d
 
 🏗️ Pipeline Docker
 🔧 Build e Push da Imagem dev (branch dev)
-Trigger: push ou pull request na branch dev
+Trigger: Push ou Pull Request na branch dev
 
 Resultado:
 Imagem → brabodopedro/my-docker:dev
 
 🚀 Build e Push da Imagem latest (branch main)
-Trigger: push ou pull request na branch main
+Trigger: Push ou Pull Request na branch main
 
 Resultado:
 Imagem → brabodopedro/my-docker:latest
 
 🏷️ Versionamento Automático
-Utilizamos o Semantic Release para versionamento:
+Utilizamos Semantic Release para versionamento automático:
 
 Tipo de Commit	Impacto na versão	Exemplo
 fix:	🔼 Patch (0.0.X)	fix: corrige bug da rota /ping
@@ -45,7 +54,7 @@ A cada merge na main, uma nova tag (v1.0.3, v1.1.0...) é gerada automaticamente
 
 A tag é publicada na aba Releases do GitHub.
 
-O CHANGELOG.md é atualizado automaticamente com as mudanças.
+O arquivo CHANGELOG.md é atualizado automaticamente com as mudanças.
 
 🗂️ Estrutura dos Workflows
 Arquivo	Função
@@ -59,6 +68,8 @@ DOCKER_USERNAME	Usuário do Docker Hub
 DOCKER_PASSWORD	Token de acesso do Docker Hub
 GH_TOKEN	Token GitHub (para criar tags e releases)
 SSH_PRIVATE_KEY	Chave SSH (para push via semantic-release)
+AWS_ACCESS_KEY_ID	Chave de acesso AWS (para deploy futuro)
+AWS_SECRET_ACCESS_KEY	Chave secreta AWS (para deploy futuro)
 
 🚀 Como rodar localmente com Docker
 1. Build da imagem
@@ -74,10 +85,22 @@ docker run -p 3000:3000 brabodopedro/my-docker
 API estará disponível em:
 👉 http://localhost:3000/ping
 
-🌍 Deploy na AWS (em desenvolvimento)
-🚀 O projeto será publicado na AWS usando a imagem brabodopedro/my-docker:latest
+🌍 Deploy na AWS — ✅ Concluído com sucesso
+✅ O projeto foi publicado na AWS ECS usando a imagem brabodopedro/my-docker:latest
 
-O deploy também será automatizado via GitHub Actions
+✅ Rodando na infraestrutura Serverless da AWS Fargate
+
+🚀 API pública disponível em:
+
+http://18.214.87.127:3000/ping
+
+http://18.214.87.127:3000/api-docs
 
 📜 Licença
 MIT
+
+✨ Status do Projeto
+✅ Pipeline Docker — ✔️
+✅ Versionamento Automático — ✔️
+✅ Deploy AWS (manual) — ✔️
+🔄 Deploy automatizado via GitHub Actions na AWS — Em desenvolvimento
