@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/Brabodopedro/new-aws/compare/v1.2.0...v1.2.1) (2025-05-31)
+
+
+### Bug Fixes
+
+* Arrumando o README ([045271c](https://github.com/Brabodopedro/new-aws/commit/045271cbe3f149901f2e996e9eda9b955e122005))
+* Erro ([00cc9c6](https://github.com/Brabodopedro/new-aws/commit/00cc9c6732292ee4a2778ebe069ee10d0592db24))
+
 # [1.2.0](https://github.com/Brabodopedro/new-aws/compare/v1.1.2...v1.2.0) (2025-05-31)
 
 
