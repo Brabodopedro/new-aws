@@ -1,9 +1,43 @@
 services:
-  node-app:
-    image: brabodopedro/my-docker:meu-node-app
+  backend-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-cripto-node
     ports:
-      - "3000:3000"
+      - "3002:3000"
+    depends_on:
+      - mongo
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_DB=binance
+      - MONGO_COLLECTION=carteira
+    restart: always
+
+  binance-service:
+    build:
+      context: ./binance-wallet
+      dockerfile: Dockerfile
+    container_name: binance-python
+    depends_on:
+      - mongo
+    environment:
+      - BINANCE_API_KEY=${BINANCE_API_KEY}
+      - BINANCE_API_SECRET=${BINANCE_API_SECRET}
+      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_DB=binance
+      - MONGO_COLLECTION=carteira
+    restart: on-failure
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27018:27017"
     volumes:
-      - .:/app
-    working_dir: /app
-    command: sh -c "npm install && npm start"
+      - mongodb_data:/data/db
+    restart: always
+
+volumes:
+  mongodb_data:
