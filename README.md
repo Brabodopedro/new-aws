@@ -49,6 +49,7 @@ Exemplo:
     "data_coleta": "2025-05-31T00:00:00Z"
   }
 ]
+```
 ⚡ Fluxo de Execução
 📦 Fluxo Geral (Como vai ficar)
 
@@ -118,6 +119,3 @@ Releases automáticas são geradas ao fazer push na branch dev.
 
 📌 Autor
 Pedro Henrique Obara
-GitHub
-
-LINK EC2 e MongoDB Atlas loading...
