@@ -1,106 +1,123 @@
-🚀 Projeto Node.js API — Pipeline Docker + Versionamento + Deploy na AWS
-📦 Sobre
-Este projeto é uma API simples em Node.js (API de ping-pong e documentação Swagger) com:
+# 📈 Projeto - Tracker Cripto com Docker, CI/CD e AWS
 
-🐳 Pipeline completo para geração de imagens Docker
+Este projeto é um sistema completo para **monitoramento de criptomoedas** com:
 
-🏷️ Versionamento automático com Semantic Release
+- 🧠 Backend Node.js (API REST)
+- 🐍 Serviço Python (consulta carteira Binance)
+- 🍃 MongoDB (armazenamento dos ativos)
+- 🐳 Containers com Docker Compose
+- 📦 Versionamento com `semantic-release`
+- 🚀 Deploy futuro com GitHub Actions + AWS
 
-🔁 Deploy automatizado via Docker Hub
+---
 
-☁️ Deploy bem-sucedido na AWS ECS Fargate
+## ⚙️ Tecnologias
 
-🌍 Deploy na AWS
-✅ O projeto está rodando em ambiente de produção na AWS ECS Fargate, acessível publicamente:
+- Node.js + Express + MongoDB
+- Python 3.11 + Binance API
+- Docker + Docker Compose
+- GitHub Actions (CI/CD)
+- semantic-release
+- AWS ECS + MongoDB Atlas (produção futura)
 
-API Health Check → http://18.214.87.127:3000/ping
+---
 
-Documentação Swagger → http://18.214.87.127:3000/api-docs
+## 📂 Estrutura
 
-🐙 Fluxo de Docker + Versionamento
-✅ Organização das Branches
-Branch	Função	Imagem Docker
-main	Produção	brabodopedro/my-docker:latest
-dev	Desenvolvimento e testes	brabodopedro/my-docker:dev
+📁 backend-node/ → API em Node.js
+📁 binance-service/ → Script Python que busca dados da Binance
+📁 docker-compose.yml → Orquestração dos serviços
 
-🔥 Funcionamento dos Workflows
-Evento	Ação
-Push ou Pull Request na main	Build da imagem → Push para Docker Hub como latest (produção)
-Push ou Pull Request na dev	Build da imagem → Push para Docker Hub como dev (desenvolvimento)
+yaml
+Copy
+Edit
 
-🏗️ Pipeline Docker
-🔧 Build e Push da Imagem dev (branch dev)
-Trigger: Push ou Pull Request na branch dev
+---
 
-Resultado:
-Imagem → brabodopedro/my-docker:dev
+## 🔗 Rotas da API (Node.js)
 
-🚀 Build e Push da Imagem latest (branch main)
-Trigger: Push ou Pull Request na branch main
+### `GET /ativos`
+Retorna os ativos da carteira salvos no MongoDB.
 
-Resultado:
-Imagem → brabodopedro/my-docker:latest
+Exemplo:
+```json
+[
+  {
+    "asset": "BTC",
+    "quantidade": 0.5,
+    "valor_entrada_usdt": 25000,
+    "data_coleta": "2025-05-31T00:00:00Z"
+  }
+]
+⚡ Fluxo de Execução
+📦 Fluxo Geral (Como vai ficar)
 
-🏷️ Versionamento Automático
-Utilizamos Semantic Release para versionamento automático:
+mermaid
+Copy
+Edit
+graph LR
+subgraph "Docker Compose"
+  PY[Python: binance-service] --> Mongo
+  Mongo[(MongoDB)]
+  Node[Node.js: API] --> Mongo
+end
 
-Tipo de Commit	Impacto na versão	Exemplo
-fix:	🔼 Patch (0.0.X)	fix: corrige bug da rota /ping
-feat:	🔼 Minor (0.X.0)	feat: adiciona rota /status
-BREAKING CHANGE:	🔼 Major (X.0.0)	Alterações que quebram compatibilidade
+subgraph "Frontend React"
+  React[Botão 'Atualizar carteira'] --> PY
+  React -->|A cada 5s| Node
+end
 
-🚀 Tags e Releases Automáticas
-A cada merge na main, uma nova tag (v1.0.3, v1.1.0...) é gerada automaticamente.
+React -->|Chama rotas| Node
+Node -->|Consulta dados| Mongo
+O botão "Atualizar carteira" executa o container Python que coleta os dados da Binance.
 
-A tag é publicada na aba Releases do GitHub.
+A cada 5 segundos, o front consulta a API para exibir os valores atualizados sem reload.
 
-O arquivo CHANGELOG.md é atualizado automaticamente com as mudanças.
+O Python grava os dados somente se for um ativo novo.
 
-🗂️ Estrutura dos Workflows
-Arquivo	Função
-.github/workflows/docker-prod.yml	Build da imagem latest na branch main
-.github/workflows/docker-dev.yml	Build da imagem dev na branch dev
-.github/workflows/release.yml	Versionamento automático com Semantic Release
+API em Node.js serve esses dados para o front.
 
-🔐 Secrets utilizados no GitHub Actions
-Nome	Descrição
-DOCKER_USERNAME	Usuário do Docker Hub
-DOCKER_PASSWORD	Token de acesso do Docker Hub
-GH_TOKEN	Token GitHub (para criar tags e releases)
-SSH_PRIVATE_KEY	Chave SSH (para push via semantic-release)
-AWS_ACCESS_KEY_ID	Chave de acesso AWS (para deploy futuro)
-AWS_SECRET_ACCESS_KEY	Chave secreta AWS (para deploy futuro)
+✅ Status Atual
+✅ API REST configurada e conectada ao MongoDB
 
-🚀 Como rodar localmente com Docker
-1. Build da imagem
+✅ Python busca ativos da Binance e armazena no banco
+
+✅ Docker Compose funcionando com 3 containers (Node, Python, Mongo)
+
+✅ Versionamento semântico funcionando (semantic-release)
+
+🔜 Front-end em React
+
+🔜 Deploy completo na AWS (ECS + S3/CloudFront)
+
+🚀 Como rodar localmente
 bash
 Copy
 Edit
-docker build -t brabodopedro/my-docker .
-2. Rodar o container
-bash
-Copy
-Edit
-docker run -p 3000:3000 brabodopedro/my-docker
-API estará disponível em:
-👉 http://localhost:3000/ping
+# Builda os containers
+docker compose build
 
-🌍 Deploy na AWS — ✅ Concluído com sucesso
-✅ O projeto foi publicado na AWS ECS usando a imagem brabodopedro/my-docker:latest
+# Sobe os serviços
+docker compose up -d
 
-✅ Rodando na infraestrutura Serverless da AWS Fargate
+# Executa o script Python
+docker compose run --rm binance-service
+🏷️ Versionamento
+Este projeto usa semantic-release para gerar automaticamente:
 
-🚀 API pública disponível em:
+Tags (v1.1.0)
 
-http://18.214.87.127:3000/ping
+CHANGELOG.md
 
-http://18.214.87.127:3000/api-docs
+Publicação de releases
 
-📜 Licença
-MIT
+🧠 Contribuição
+Commits devem seguir o padrão feat:, fix:, chore: etc.
 
-✨ Status do Projeto
-✅ Pipeline Docker — ✔️
-✅ Versionamento Automático — ✔️
-✅ Deploy AWS (manual) — ✔️
-🔄 Deploy automatizado via GitHub Actions na AWS — Em desenvolvimento
+Releases automáticas são geradas ao fazer push na branch dev.
+
+📌 Autor
+Pedro Henrique Obara
+GitHub
+
+LINK EC2 e MongoDB Atlas loading...
