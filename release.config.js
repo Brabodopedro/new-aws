@@ -1,6 +1,6 @@
 module.exports = {
   repositoryUrl: 'git@github.com:Brabodopedro/new-aws.git',
-  branches: ['dev'],
+  branches: ['main'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
