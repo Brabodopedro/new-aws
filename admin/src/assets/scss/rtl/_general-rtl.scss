@@ -1,0 +1,17 @@
+// 
+// general-rtl.scss
+//
+
+html {
+    direction: rtl;
+}
+
+body {
+    text-align: right;
+}
+
+.state-information{
+    .state-graph{
+    float: left;
+    }
+}  

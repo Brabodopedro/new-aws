@@ -7,3 +7,4 @@ Dockerfile
 README.md
 .github/
 dist
+.env

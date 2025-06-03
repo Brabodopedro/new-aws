@@ -1,3 +1,24 @@
+# [1.2.0](https://github.com/Brabodopedro/new-aws/compare/v1.1.2...v1.2.0) (2025-05-31)
+
+
+### Bug Fixes
+
+* Erro ([db3e034](https://github.com/Brabodopedro/new-aws/commit/db3e0348aceec27338275f3dbcecc050a07462cc))
+
+
+### Features
+
+* **binance-wallet:** script inicial para coletar carteira e salvar valor de entrada ([3e8679e](https://github.com/Brabodopedro/new-aws/commit/3e8679ea3add996f5315f2b97c4d2f5b1251baac))
+* **binance:** sincroniza carteira da Binance com MongoDB ([4621b50](https://github.com/Brabodopedro/new-aws/commit/4621b50bb3069be24fd574a7e02b749086669136))
+* **binance:** sincroniza carteira da Binance com MongoDB ([6d795fa](https://github.com/Brabodopedro/new-aws/commit/6d795fa134972b6c0a69b14e96d64f823e935c1a))
+
+## [1.1.2](https://github.com/Brabodopedro/new-aws/compare/v1.1.1...v1.1.2) (2025-05-21)
+
+
+### Bug Fixes
+
+* Adicionando o docker de Produçao  na brant main ([46307e2](https://github.com/Brabodopedro/new-aws/commit/46307e26f4dbfd3fa0fa20df9274db132894c85c))
+
 ## [1.1.1](https://github.com/Brabodopedro/new-aws/compare/v1.1.0...v1.1.1) (2025-05-20)
 
 
