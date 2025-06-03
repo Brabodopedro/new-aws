@@ -1,3 +1,11 @@
+## [1.3.1](https://github.com/Brabodopedro/new-aws/compare/v1.3.0...v1.3.1) (2025-06-03)
+
+
+### Bug Fixes
+
+* Arrumando brant main ([c360525](https://github.com/Brabodopedro/new-aws/commit/c360525d41664e12fcd78e490a1790fd9b9c52dc))
+* Arrumando bug do releace e do readme da dev ([aee047e](https://github.com/Brabodopedro/new-aws/commit/aee047e085a77ab060c56299b735f868680de89c))
+
 # [1.3.0](https://github.com/Brabodopedro/new-aws/compare/v1.2.1...v1.3.0) (2025-06-03)
 
 
