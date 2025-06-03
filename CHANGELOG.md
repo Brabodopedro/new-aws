@@ -1,3 +1,19 @@
+# [1.3.0](https://github.com/Brabodopedro/new-aws/compare/v1.2.0...v1.3.0) (2025-06-03)
+
+
+### Bug Fixes
+
+* Adicionando oo docker de dev na brant dev ([e0d6555](https://github.com/Brabodopedro/new-aws/commit/e0d6555257218407664c3abfb4698c3d733999f0))
+* arrumando brant dev ([0cc30b6](https://github.com/Brabodopedro/new-aws/commit/0cc30b6afdc6d11096536b3c69ca2afb43667be5))
+* Arrumando bug ([e3d0c32](https://github.com/Brabodopedro/new-aws/commit/e3d0c323ab11bb3300337f7902cd4f93dfa3f1ad))
+* Arrumando o README ([045271c](https://github.com/Brabodopedro/new-aws/commit/045271cbe3f149901f2e996e9eda9b955e122005))
+* Erro ([00cc9c6](https://github.com/Brabodopedro/new-aws/commit/00cc9c6732292ee4a2778ebe069ee10d0592db24))
+
+
+### Features
+
+* Adicionando o inicio do Front. Pastas basicas e preparando para limpar o template. ([6de557b](https://github.com/Brabodopedro/new-aws/commit/6de557bce277a9c6568a657c03d620d438eca0c8))
+
 # [1.2.0](https://github.com/Brabodopedro/new-aws/compare/v1.1.2...v1.2.0) (2025-05-31)
 
 
