@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/Brabodopedro/new-aws/compare/v1.2.1...v1.3.0) (2025-06-03)
+
+
+### Bug Fixes
+
+* Arrumando bug ([e3d0c32](https://github.com/Brabodopedro/new-aws/commit/e3d0c323ab11bb3300337f7902cd4f93dfa3f1ad))
+
+
+### Features
+
+* Adicionando o inicio do Front. Pastas basicas e preparando para limpar o template. ([6de557b](https://github.com/Brabodopedro/new-aws/commit/6de557bce277a9c6568a657c03d620d438eca0c8))
+
 ## [1.2.1](https://github.com/Brabodopedro/new-aws/compare/v1.2.0...v1.2.1) (2025-05-31)
 
 
