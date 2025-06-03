@@ -1,0 +1,19 @@
+
+//
+// Form-Upload
+//
+
+/* Dropzone */
+.dropzone {
+  min-height: 230px;
+  border: 2px dashed var(--#{$prefix}border-color);
+  background: $card-bg;
+  border-radius: 6px;
+  padding: 20px 20px;
+  .dz-message {
+    font-size: 24px;
+  &:focus{
+    outline: none;
+  }
+  }
+}
